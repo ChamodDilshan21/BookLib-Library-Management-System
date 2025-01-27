@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(&quot;../img/login_page_background&quot;);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(&quot;../img/login_page_background&quot;);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.viewController.LoginFormController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,18 +18,24 @@
       </ImageView>
       <AnchorPane layoutX="156.0" layoutY="29.0" opacity="0.95" prefHeight="353.0" prefWidth="286.0" style="-fx-background-color: #F9F9F9;">
          <children>
-            <Label layoutX="50.0" layoutY="9.0" prefHeight="78.0" prefWidth="191.0" text="Welcome to BookLib" textAlignment="CENTER" textFill="#550a8a" wrapText="true">
+            <Label alignment="CENTER" layoutX="7.0" layoutY="71.0" prefHeight="71.0" prefWidth="271.0" text="Welcome to BookLib" textAlignment="CENTER" textFill="#03045e" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtEmail" alignment="CENTER" layoutX="16.0" layoutY="126.0" prefHeight="26.0" prefWidth="254.0" promptText="email" />
-            <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="13.0" layoutY="188.0" prefHeight="26.0" prefWidth="254.0" promptText="password" />
-            <JFXButton fx:id="btnLogin" alignment="CENTER" layoutX="98.0" layoutY="251.0" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="89.0" style="-fx-background-color: #6A0DAD;" text="Login" textFill="WHITE">
+            <JFXTextField fx:id="txtEmail" alignment="CENTER" layoutX="16.0" layoutY="181.0" prefHeight="26.0" prefWidth="254.0" promptText="email" />
+            <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="13.0" layoutY="226.0" prefHeight="26.0" prefWidth="254.0" promptText="password" />
+            <JFXButton fx:id="btnLogin" alignment="CENTER" layoutX="98.0" layoutY="291.0" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="89.0" style="-fx-background-color: #023E8A;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </JFXButton>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="111.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/BookLib_logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="37.0" layoutY="126.0" prefHeight="39.0" prefWidth="206.0" text="Please enter your email and password to login" textAlignment="CENTER" wrapText="true" />
          </children>
       </AnchorPane>
    </children>

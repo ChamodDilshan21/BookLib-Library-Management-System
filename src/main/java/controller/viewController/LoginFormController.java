@@ -1,4 +1,4 @@
-package controller;
+package controller.viewController;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Employee;
 import notification.Notification;
@@ -36,6 +37,7 @@ public class LoginFormController {
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM employee WHERE email='" + txtEmail.getText() + "'");
             if (resultSet.next()){
                 Employee employee = new Employee(
+                        resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
@@ -46,7 +48,9 @@ public class LoginFormController {
                 basicTextEncryptor.setPassword(key);
                 if (basicTextEncryptor.decrypt(employee.getPassword()).equals(txtPassword.getText())){
                     Stage stage = new Stage();
-                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/dashboard_form.fxml"))));
+                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"))));
+                    stage.setResizable(false);
+                    stage.getIcons().add(new Image("img/BookLib_logo.png"));
                     stage.show();
                 }else {
                     Notification.showNotification("Login Failed!! Please Check Credentials Again..");
