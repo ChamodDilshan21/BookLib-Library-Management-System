@@ -12,6 +12,7 @@ public class Starter extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/login_form.fxml"))));
+        stage.setResizable(false);
         stage.show();
     }
 }
