@@ -25,13 +25,13 @@ public class EmployeeController implements EmployeeService{
     @Override
     public boolean updateEmployee(Employee employee) throws SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        return connection.createStatement().executeUpdate("UPDATE employee SET name='?',email='?',contact='?' WHERE id='" + employee.getEmpId() + "'")>0;
+        return connection.createStatement().executeUpdate("UPDATE employee SET name='?',email='?',contact='?' WHERE empId='" + employee.getEmpId() + "'")>0;
     }
 
     @Override
     public Employee searchEmployee(String empId) throws SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM customer WHERE id='" + empId + "'");
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM employee WHERE empId='" + empId + "'");
         if(resultSet.next()) {
             return new Employee(
                     resultSet.getString(1),
@@ -48,7 +48,7 @@ public class EmployeeController implements EmployeeService{
     public List<Employee> getAllEmployees() throws SQLException {
         List<Employee> employeeList = new ArrayList<>();
         Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customer");
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM employee");
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while (resultSet.next()) {

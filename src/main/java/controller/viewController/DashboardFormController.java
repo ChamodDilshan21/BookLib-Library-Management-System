@@ -119,7 +119,7 @@ public class DashboardFormController {
 
     @FXML
     void btnRegNewEmployeeOnAction(ActionEvent event) {
-        URL resource = this.getClass().getResource("/view/reg_new_emp_form.fxml");
+        URL resource = this.getClass().getResource("../../view/reg_new_emp_form.fxml");
 
         assert resource != null;
 

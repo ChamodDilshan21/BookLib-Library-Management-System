@@ -41,17 +41,27 @@ public class LoginFormController {
                         resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
-                        resultSet.getString(5)
+                        resultSet.getString(5),
+                        resultSet.getString(6)
                 );
                 BasicTextEncryptor basicTextEncryptor = new BasicTextEncryptor();
-                String key = "#v08n2N";
-                basicTextEncryptor.setPassword(key);
+                basicTextEncryptor.setPassword("#v08n2N");
                 if (basicTextEncryptor.decrypt(employee.getPassword()).equals(txtPassword.getText())){
                     Stage stage = new Stage();
-                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"))));
+                    System.out.println(employee.getRole().equals("Admin"));
+                    System.out.println(employee.getRole());
+                    if(employee.getRole().equals("Admin")){
+                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_dashboard_form.fxml"))));
+                    }else {
+                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/default_dashboard_form.fxml"))));
+                    }
+
                     stage.setResizable(false);
                     stage.getIcons().add(new Image("img/BookLib_logo.png"));
+                    stage.setTitle("Dashboard");
                     stage.show();
+                    Stage currentStage = (Stage) btnLogin.getScene().getWindow();
+                    currentStage.close();
                 }else {
                     Notification.showNotification("Login Failed!! Please Check Credentials Again..");
                 }

@@ -15,6 +15,7 @@ public class Starter extends Application {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/login_form.fxml"))));
         stage.getIcons().add(new Image("img/BookLib_logo.png"));
         stage.setResizable(false);
+        stage.setTitle("Login Window");
         stage.show();
     }
 }
