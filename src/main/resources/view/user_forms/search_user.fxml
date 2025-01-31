@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.SearchUserFormController">
+   <children>
+      <Label layoutX="460.0" layoutY="47.0" text="Search User" textFill="#03045e">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="151.0" text="Search Users by :" wrapText="true">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSearchBy" layoutX="499.0" layoutY="140.0" prefHeight="40.0" prefWidth="217.0" text="Enter user contact number to search :" wrapText="true">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbFilter" focusColor="#03045e" layoutX="261.0" layoutY="147.0" onAction="#cmbFilterOnAction" prefHeight="26.0" prefWidth="159.0" unFocusColor="BLACK" />
+      <JFXTextField fx:id="txtSearch" focusColor="#03045e" layoutX="716.0" layoutY="147.0" prefHeight="26.0" prefWidth="203.0" unFocusColor="BLACK" />
+      <JFXButton ellipsisString="" layoutX="927.0" layoutY="140.0" onAction="#btnSearchOnAction" prefHeight="40.0" prefWidth="44.0" style="-fx-background-color: #F77F00;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/search-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView fx:id="tblUser" layoutX="86.0" layoutY="199.0" prefHeight="319.0" prefWidth="926.0">
+         <columns>
+            <TableColumn fx:id="colUserId" prefWidth="130.4000244140625" text="UserId" />
+            <TableColumn fx:id="colName" prefWidth="204.0" text="Name" />
+            <TableColumn fx:id="colContact" prefWidth="170.4000244140625" text="Contact" />
+            <TableColumn fx:id="colMembershipDate" prefWidth="240.7999267578125" text="Membership Date" />
+            <TableColumn fx:id="colBalance" prefWidth="183.20001220703125" text="Balance" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="793.0" layoutY="537.0" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="Get All Users" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
