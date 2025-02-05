@@ -1,5 +1,6 @@
 package controller.user;
 
+import javafx.collections.ObservableList;
 import model.Employee;
 import model.User;
 
@@ -12,7 +13,11 @@ public interface UserServices {
 
     boolean updateUser(User user, String oldContact) throws SQLException;
 
-    User searchUser(String contact) throws SQLException, ParseException;
+    List<User> searchUserByContact(String contact) throws SQLException, ParseException;
+
+    List<User> searchUserByName(String name) throws SQLException, ParseException;
+
+    List<User> searchUserByMembershipDate(String date) throws SQLException, ParseException;
 
     List<User> getAllUsers() throws SQLException, ParseException;
 

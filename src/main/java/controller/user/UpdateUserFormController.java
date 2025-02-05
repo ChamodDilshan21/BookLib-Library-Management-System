@@ -63,12 +63,10 @@ public class UpdateUserFormController implements Initializable {
     @FXML
     void btnSearchOnAction(ActionEvent event) {
         if (InputValidator.isValidContact(txtSearch.getText())) {
-            ObservableList<User> userObservableList = FXCollections.observableArrayList();
             try {
-                User user = new UserController().searchUser(txtSearch.getText());
-                if (user!=null){
-                    userObservableList.add(user);
-                    tblUser.setItems(userObservableList);
+                ObservableList<User> userList = FXCollections.observableArrayList(new UserController().searchUserByContact(txtSearch.getText()));
+                if (!userList.isEmpty()){
+                    tblUser.setItems(userList);
                     btnUpdate.setDisable(false);
                 }else {
                     Notification.showNotification("No user Found");

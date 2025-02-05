@@ -62,7 +62,17 @@ public class UserManagementFormController {
 
     @FXML
     void btnDeleteUserOnAction(ActionEvent event) {
+        URL resource = this.getClass().getResource("../../view/user_forms/delete_user.fxml");
 
+        assert resource != null;
+
+        try {
+            Parent load = FXMLLoader.load(resource);
+            loadFormContent.getChildren().clear();
+            loadFormContent.getChildren().add(load);
+        } catch (IOException e) {
+            Notification.showNotification(e);
+        }
     }
 
 

@@ -1,6 +1,8 @@
 package controller.user;
 
 import db.DBConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.User;
 
 import java.sql.Connection;
@@ -37,19 +39,54 @@ public class UserController implements UserServices {
     }
 
     @Override
-    public User searchUser(String contact) throws SQLException, ParseException {
+    public List<User> searchUserByContact(String contact) throws SQLException, ParseException {
+        List<User> userList= new ArrayList<>();
         Connection connection = DBConnection.getInstance().getConnection();
         ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM user WHERE contact='" + contact + "'");
-        if(resultSet.next()) {
-            return new User(
+        while(resultSet.next()) {
+            userList.add(new User(
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
                     new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
                     resultSet.getDouble(5)
-            );
+            ));
         }
-        return null;
+        return userList;
+    }
+
+    @Override
+    public List<User> searchUserByName(String name) throws SQLException, ParseException {
+        List<User> userList= new ArrayList<>();
+        Connection connection = DBConnection.getInstance().getConnection();
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM user WHERE name='" + name + "'");
+        while(resultSet.next()) {
+            userList.add(new User(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
+                    resultSet.getDouble(5)
+            ));
+        }
+        return userList;
+    }
+
+    @Override
+    public List<User> searchUserByMembershipDate(String date) throws SQLException, ParseException {
+        List<User> userList= new ArrayList<>();
+        Connection connection = DBConnection.getInstance().getConnection();
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM user WHERE membershipDate='" + date + "'");
+        while(resultSet.next()) {
+            userList.add(new User(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
+                    resultSet.getDouble(5)
+            ));
+        }
+        return userList;
     }
 
     @Override

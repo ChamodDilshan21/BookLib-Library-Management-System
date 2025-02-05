@@ -48,7 +48,7 @@
             <TableColumn fx:id="colBalance" prefWidth="183.20001220703125" text="Balance" />
          </columns>
       </TableView>
-      <JFXButton layoutX="793.0" layoutY="537.0" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="Get All Users" textFill="WHITE">
+      <JFXButton fx:id="viewAllUsers" layoutX="793.0" layoutY="537.0" onAction="#viewAllUsersOnAction" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="View All Users" textFill="WHITE">
          <font>
             <Font name="Calibri Bold Italic" size="16.0" />
          </font>
