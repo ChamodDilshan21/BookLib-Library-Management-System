@@ -39,13 +39,13 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <TableView fx:id="tblUser" layoutX="86.0" layoutY="199.0" prefHeight="319.0" prefWidth="926.0">
+      <TableView fx:id="tblUser" layoutX="86.0" layoutY="199.0" prefHeight="319.0" prefWidth="926.0" stylesheets="@../../css/style.css">
          <columns>
-            <TableColumn fx:id="colUserId" prefWidth="130.4000244140625" text="UserId" />
-            <TableColumn fx:id="colName" prefWidth="204.0" text="Name" />
-            <TableColumn fx:id="colContact" prefWidth="170.4000244140625" text="Contact" />
-            <TableColumn fx:id="colMembershipDate" prefWidth="240.7999267578125" text="Membership Date" />
-            <TableColumn fx:id="colBalance" prefWidth="183.20001220703125" text="Balance" />
+            <TableColumn fx:id="colUserId" prefWidth="130.4000244140625" style="-fx-alignment: BASELINE_CENTER;" text="UserId" />
+            <TableColumn fx:id="colName" prefWidth="204.0" style="-fx-alignment: BASELINE_CENTER;" text="Name" />
+            <TableColumn fx:id="colContact" prefWidth="170.4000244140625" style="-fx-alignment: BASELINE_CENTER;" text="Contact" />
+            <TableColumn fx:id="colMembershipDate" prefWidth="240.7999267578125" style="-fx-alignment: BASELINE_CENTER;" text="Membership Date" />
+            <TableColumn fx:id="colBalance" prefWidth="183.20001220703125" style="-fx-alignment: BASELINE_CENTER;" text="Balance" />
          </columns>
       </TableView>
       <JFXButton fx:id="viewAllUsers" layoutX="793.0" layoutY="537.0" onAction="#viewAllUsersOnAction" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="View All Users" textFill="WHITE">

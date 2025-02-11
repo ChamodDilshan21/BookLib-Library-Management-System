@@ -1,8 +1,6 @@
 package controller.user;
 
 import db.DBConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import model.User;
 
 import java.sql.Connection;
@@ -59,7 +57,7 @@ public class UserController implements UserServices {
     public List<User> searchUserByName(String name) throws SQLException, ParseException {
         List<User> userList= new ArrayList<>();
         Connection connection = DBConnection.getInstance().getConnection();
-        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM user WHERE name='" + name + "'");
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM user WHERE name LIKE '%"+name+"%';");
         while(resultSet.next()) {
             userList.add(new User(
                     resultSet.getString(1),

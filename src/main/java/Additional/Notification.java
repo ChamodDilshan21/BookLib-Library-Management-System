@@ -1,9 +1,6 @@
 package Additional;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-
-import java.util.Optional;
 
 public class Notification {
     public static void showNotification(String msg) {
@@ -28,9 +25,4 @@ public class Notification {
         alert.showAndWait();
     }
 
-    public static void deleteConfirmationAlert(){
-
-
-
-    }
 }

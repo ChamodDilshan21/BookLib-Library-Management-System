@@ -20,7 +20,7 @@ public class Book {
         this.availability = availability;
     }
 
-    String bookId;
+    int bookId;
     String title;
     String author;
     String ISBN;

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.book.AddBookFormController">
+   <children>
+      <Label layoutX="705.0" layoutY="63.0" text="Add New Book" textFill="#f77f00">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtTitle" focusColor="#03045e" layoutX="765.0" layoutY="145.8" prefHeight="30.0" prefWidth="200.0" promptText="Title" unFocusColor="BLACK" AnchorPane.topAnchor="145.8">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAuthor" focusColor="#03045e" layoutX="765.0" layoutY="205.8" prefHeight="30.0" prefWidth="200.0" promptText="Athor" unFocusColor="BLACK" AnchorPane.topAnchor="205.8">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtISBN" focusColor="#03045e" layoutX="765.0" layoutY="265.8" prefHeight="30.0" prefWidth="200.0" promptText="ISBN" unFocusColor="BLACK" AnchorPane.topAnchor="265.8">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="839.0" layoutY="466.0" onAction="#btnAddOnAction" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="Add" textFill="#fcfcfc">
+         <font>
+            <Font name="Calibri Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="668.0" layoutY="161.0" text="Title :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="668.0" layoutY="221.0" text="Author :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="668.0" layoutY="281.0" text="ISBN :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="662.0" layoutY="333.0" text="Genre :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbGenre" focusColor="#03045e" layoutX="765.0" layoutY="325.8" prefHeight="26.0" prefWidth="200.0" promptText="Genre" unFocusColor="BLACK" AnchorPane.topAnchor="325.8" />
+      <Label layoutX="663.0" layoutY="393.0" text="Availability :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbAvailability" focusColor="#03045e" layoutX="765.0" layoutY="385.8" prefHeight="26.0" prefWidth="200.0" promptText="Availability" unFocusColor="BLACK" AnchorPane.topAnchor="385.8" />
+      <Rectangle height="570.0" layoutX="14.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="596.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startY="0.20075761910640832">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.007843137718737125" green="0.24313725531101227" blue="0.5411764979362488" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.40376850605652764">
+                     <color>
+                        <Color red="0.007843137718737125" green="0.24313725531101227" blue="0.5411764979362488" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9411764740943909" blue="0.9725490212440491" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="432.0" fitWidth="326.0" layoutX="150.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/add-book-page-bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="225.0" prefHeight="140.0" prefWidth="596.0" text="One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Brush Script MT Italic" size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

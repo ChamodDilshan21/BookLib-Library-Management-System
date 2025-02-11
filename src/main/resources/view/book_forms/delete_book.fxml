@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.book.DeleteBookFormController">
+   <children>
+      <Label layoutX="406.0" layoutY="46.0" text="Remove Book From System" textFill="#03045e">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtBookId" focusColor="#03045e" layoutX="648.0" layoutY="128.8" prefHeight="30.0" prefWidth="200.0" promptText="bookId" unFocusColor="BLACK" AnchorPane.topAnchor="128.8">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnDelete" disable="true" layoutX="488.0" layoutY="532.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="Delete" textFill="#fcfcfc">
+         <font>
+            <Font name="Calibri Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="287.0" layoutY="135.0" text="Enter the bookId of the book that need be deleted :" wrapText="true">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton ellipsisString="" layoutX="860.0" layoutY="124.0" onAction="#btnSearchOnAction" prefHeight="40.0" prefWidth="44.0" style="-fx-background-color: #F77F00;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/search-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txtTitle" editable="false" focusColor="#03045e" layoutX="551.0" layoutY="223.0" prefHeight="30.0" prefWidth="200.0" promptText="Title" unFocusColor="BLACK">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAuthor" editable="false" focusColor="#03045e" layoutX="551.0" layoutY="283.0" prefHeight="30.0" prefWidth="200.0" promptText="Athor" unFocusColor="BLACK">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtISBN" editable="false" focusColor="#03045e" layoutX="551.0" layoutY="343.0" prefHeight="30.0" prefWidth="200.0" promptText="ISBN" unFocusColor="BLACK">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="461.0" layoutY="239.0" text="Title :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="299.0" text="Author :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="359.0" text="ISBN :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="455.0" layoutY="411.0" text="Genre :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="456.0" layoutY="471.0" text="Availability :">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="457.0" layoutY="187.0" text="Book Details" textFill="#03045e">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtGenre" editable="false" focusColor="#03045e" layoutX="551.0" layoutY="396.0" prefHeight="30.0" prefWidth="200.0" promptText="Genre" unFocusColor="BLACK">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAvailability" editable="false" focusColor="#03045e" layoutX="551.0" layoutY="456.0" prefHeight="30.0" prefWidth="200.0" promptText="Availability" unFocusColor="BLACK">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>

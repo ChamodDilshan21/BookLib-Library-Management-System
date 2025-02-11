@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.book.SearchBookFormController">
+   <children>
+      <Label layoutX="460.0" layoutY="47.0" text="Search Books" textFill="#03045e">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="151.0" text="Search book by :" wrapText="true">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSearchBy" layoutX="517.0" layoutY="140.0" prefHeight="40.0" prefWidth="203.0" text="Enter the title of the book to search :" wrapText="true">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbFilter" focusColor="#03045e" layoutX="261.0" layoutY="147.0" onAction="#cmbFilterOnAction" prefHeight="26.0" prefWidth="159.0" unFocusColor="BLACK" />
+      <JFXComboBox fx:id="cmbSearch" focusColor="#03045e" layoutX="733.0" layoutY="138.4" prefHeight="26.0" prefWidth="203.0" unFocusColor="BLACK" AnchorPane.topAnchor="138.4" />
+      <JFXTextField fx:id="txtSearch" focusColor="#03045e" layoutX="733.0" layoutY="138.4" prefHeight="26.0" prefWidth="203.0" promptText="Title" unFocusColor="BLACK" AnchorPane.topAnchor="138.4">
+         <font>
+            <Font name="Calibri" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton ellipsisString="" layoutX="948.0" layoutY="133.0" onAction="#btnSearchOnAction" prefHeight="40.0" prefWidth="44.0" style="-fx-background-color: #F77F00;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/search-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView fx:id="tblBook" layoutX="10.0" layoutY="199.0" prefHeight="319.0" prefWidth="1076.0" stylesheets="@../../css/style.css">
+         <columns>
+            <TableColumn fx:id="colBookId" prefWidth="93.60000610351562" style="-fx-alignment: BASELINE_CENTER;" text="BookId" />
+            <TableColumn fx:id="colTitle" prefWidth="266.40003967285156" style="-fx-alignment: BASELINE_CENTER;" text="Title" />
+            <TableColumn fx:id="colAuthor" prefWidth="210.39996337890625" style="-fx-alignment: BASELINE_CENTER;" text="Author" />
+            <TableColumn fx:id="colISBN" prefWidth="176.800048828125" style="-fx-alignment: BASELINE_CENTER;" text="ISBN" />
+            <TableColumn fx:id="colGenre" prefWidth="209.60003662109375" style="-fx-alignment: BASELINE_CENTER;" text="Genre" />
+            <TableColumn fx:id="colAvailability" minWidth="5.0" prefWidth="115.99993896484375" style="-fx-alignment: BASELINE_CENTER;" text="Availability" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="viewAllBooks" layoutX="793.0" layoutY="537.0" onAction="#viewAllBooksOnAction" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #03045E; -fx-background-radius: 0;" text="View All Books" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

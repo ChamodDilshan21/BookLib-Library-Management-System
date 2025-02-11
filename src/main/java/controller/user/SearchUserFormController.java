@@ -89,6 +89,11 @@ public class SearchUserFormController implements Initializable {
         }
     }
 
+    public void viewAllUsersOnAction(ActionEvent actionEvent) throws SQLException, ParseException {
+        ObservableList<User> userList = FXCollections.observableArrayList(new UserController().getAllUsers());
+        tblUser.setItems(userList);
+    }
+
     @FXML
     void cmbFilterOnAction(ActionEvent event) {
         switch (cmbFilter.getValue().toString()) {
@@ -121,8 +126,4 @@ public class SearchUserFormController implements Initializable {
         colBalance.setCellValueFactory(new PropertyValueFactory<>("balance"));
     }
 
-    public void viewAllUsersOnAction(ActionEvent actionEvent) throws SQLException, ParseException {
-        ObservableList<User> userList = FXCollections.observableArrayList(new UserController().getAllUsers());
-        tblUser.setItems(userList);
-    }
 }

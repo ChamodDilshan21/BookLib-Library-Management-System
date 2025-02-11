@@ -21,4 +21,16 @@ public class InputValidator {
         Matcher match = pattern.matcher(date);
         return (match.find() && match.group().equals(date));
     }
+
+    public static boolean isValidISBN(String isbn) {
+        Pattern pattern = Pattern.compile("^(97(8|9))?\\d{9}(\\d|X)$");
+        Matcher match = pattern.matcher(isbn);
+        return (match.find() && match.group().equals(isbn));
+    }
+
+    public static boolean isValidNumber(String number) {
+        Pattern pattern = Pattern.compile("^[1-9]\\d*$");
+        Matcher match = pattern.matcher(number);
+        return (match.find() && match.group().equals(number));
+    }
 }

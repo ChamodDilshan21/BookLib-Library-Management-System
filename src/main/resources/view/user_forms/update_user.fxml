@@ -59,13 +59,13 @@
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
-        <TableView fx:id="tblUser" layoutX="50.0" layoutY="236.0" prefHeight="74.0" prefWidth="555.0">
+        <TableView fx:id="tblUser" layoutX="17.0" layoutY="236.0" prefHeight="140.0" prefWidth="588.0" stylesheets="@../../css/style.css">
             <columns>
-                <TableColumn fx:id="colUserId" prefWidth="90.39999008178711" text="UserId" />
-                <TableColumn fx:id="colName" prefWidth="102.4000244140625" text="Name" />
-                <TableColumn fx:id="colContact" prefWidth="98.40003967285156" text="Contact" />
-                <TableColumn fx:id="colMembershipDate" prefWidth="163.99993896484375" text="Membership Date" />
-                <TableColumn fx:id="colBalance" prefWidth="97.60003662109375" text="Balance" />
+                <TableColumn fx:id="colUserId" prefWidth="90.39999008178711" style="-fx-alignment: BASELINE_CENTER;" text="UserId" />
+                <TableColumn fx:id="colName" prefWidth="119.20001220703125" style="-fx-alignment: BASELINE_CENTER;" text="Name" />
+                <TableColumn fx:id="colContact" prefWidth="113.60005187988281" style="-fx-alignment: BASELINE_CENTER;" text="Contact" />
+                <TableColumn fx:id="colMembershipDate" prefWidth="154.39996337890625" style="-fx-alignment: BASELINE_CENTER;" text="Membership Date" />
+                <TableColumn fx:id="colBalance" prefWidth="110.39996337890625" style="-fx-alignment: BASELINE_CENTER;" text="Balance" />
             </columns>
         </TableView>
         <JFXButton ellipsisString="" layoutX="528.0" layoutY="179.0" onAction="#btnSearchOnAction" prefHeight="40.0" prefWidth="44.0" style="-fx-background-color: #F77F00;" text="Button">
