@@ -1,6 +1,6 @@
 package controller.user;
 
-import Additional.InputValidator;
+import util.InputValidator;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -13,12 +13,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.User;
-import Additional.Notification;
+import util.Notification;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 public class UpdateUserFormController implements Initializable {
@@ -87,7 +86,7 @@ public class UpdateUserFormController implements Initializable {
                     User user = new User(
                             txtName.getText(),
                             txtUpdatedContact.getText(),
-                            new SimpleDateFormat("yyyy-MM-dd").parse(txtNewMemDate.getValue().toString()),
+                            txtNewMemDate.getValue().toString(),
                             Double.parseDouble(txtBalance.getText())
                     );
                     boolean isUpdated = new UserController().updateUser(user,txtSearch.getText());
@@ -97,7 +96,7 @@ public class UpdateUserFormController implements Initializable {
                     } else {
                         Notification.showNotification("User Update Failed");
                     }
-                } catch (ParseException | SQLException e) {
+                } catch (SQLException e) {
                     Notification.showNotification(e);
                 }
             }else {

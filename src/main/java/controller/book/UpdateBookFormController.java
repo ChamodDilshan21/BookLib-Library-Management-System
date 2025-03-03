@@ -1,7 +1,7 @@
 package controller.book;
 
-import Additional.InputValidator;
-import Additional.Notification;
+import util.InputValidator;
+import util.Notification;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -60,7 +60,7 @@ public class UpdateBookFormController implements Initializable {
                 if (book != null){
                     oldTitle.setText(book.getTitle());
                     oldAuthor.setText(book.getAuthor());
-                    oldISBN.setText(book.getISBN());
+                    oldISBN.setText(book.getIsbn());
                     oldGenre.setText(book.getGenre());
                     oldAvailability.setText(book.getAvailability());
                     btnUpdate.setDisable(false);

@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
-import Additional.Notification;
+import util.Notification;
 
 import java.io.IOException;
 import java.net.URL;
@@ -57,7 +57,7 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void btnBorrowBookOnAction(ActionEvent event) {
-        URL resource = this.getClass().getResource("/view/borrow_book_form.fxml");
+        URL resource = this.getClass().getResource("/view/borrow-and-return/borrow_form.fxml");
 
         assert resource != null;
 
@@ -74,7 +74,7 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void btnReturnBookOnAction(ActionEvent event) {
-        URL resource = this.getClass().getResource("/view/return_book_form.fxml");
+        URL resource = this.getClass().getResource("/view/");
 
         assert resource != null;
 

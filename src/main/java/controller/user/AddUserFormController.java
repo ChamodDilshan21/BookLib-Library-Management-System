@@ -1,16 +1,15 @@
 package controller.user;
 
-import Additional.InputValidator;
+import util.InputValidator;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import model.User;
-import Additional.Notification;
+import util.Notification;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -38,7 +37,7 @@ public class AddUserFormController implements Initializable {
                     boolean isAdded = new UserController().addUser(new User(
                             txtName.getText(),
                             txtContact.getText(),
-                            new SimpleDateFormat("yyyy-MM-dd").parse(txtMembershipDate.getText()),
+                            txtMembershipDate.getText(),
                             Double.parseDouble(txtBalance.getText())
                     ));
                     if (isAdded){
@@ -46,7 +45,7 @@ public class AddUserFormController implements Initializable {
                     } else {
                         Notification.showNotification("User Registration Failed.!");
                     }
-                } catch (SQLException | ParseException e) {
+                } catch (SQLException e) {
                     Notification.showNotification(e);
                 }
             }else {

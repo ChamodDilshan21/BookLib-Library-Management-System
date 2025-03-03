@@ -46,7 +46,7 @@ public class UserController implements UserServices {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
+                    new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4))),
                     resultSet.getDouble(5)
             ));
         }
@@ -63,7 +63,7 @@ public class UserController implements UserServices {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
+                    new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4))),
                     resultSet.getDouble(5)
             ));
         }
@@ -80,7 +80,7 @@ public class UserController implements UserServices {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
+                    new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4))),
                     resultSet.getDouble(5)
             ));
         }
@@ -99,7 +99,7 @@ public class UserController implements UserServices {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4)),
+                    new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd").parse(resultSet.getString(4))),
                     resultSet.getDouble(5)
             ));
         }

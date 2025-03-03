@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
-import Additional.Notification;
+import util.Notification;
 
 import java.io.IOException;
 import java.net.URL;

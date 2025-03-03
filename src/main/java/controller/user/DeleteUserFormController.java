@@ -1,7 +1,7 @@
 package controller.user;
 
-import Additional.InputValidator;
-import Additional.Notification;
+import util.InputValidator;
+import util.Notification;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;

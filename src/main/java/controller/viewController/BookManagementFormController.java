@@ -1,6 +1,6 @@
 package controller.viewController;
 
-import Additional.Notification;
+import util.Notification;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

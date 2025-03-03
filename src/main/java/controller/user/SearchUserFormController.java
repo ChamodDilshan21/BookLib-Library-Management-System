@@ -1,7 +1,7 @@
 package controller.user;
 
-import Additional.InputValidator;
-import Additional.Notification;
+import util.InputValidator;
+import util.Notification;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -18,7 +18,6 @@ import model.User;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class SearchUserFormController implements Initializable {

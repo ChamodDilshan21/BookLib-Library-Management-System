@@ -1,8 +1,11 @@
-package Additional;
+package util;
 
 import javafx.scene.control.Alert;
 
 public class Notification {
+
+    private Notification(){}
+
     public static void showNotification(String msg) {
         //Showing the notification after adding the customer
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

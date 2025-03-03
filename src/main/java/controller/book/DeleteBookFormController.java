@@ -1,10 +1,9 @@
 package controller.book;
 
-import Additional.InputValidator;
-import Additional.Notification;
+import util.InputValidator;
+import util.Notification;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import controller.user.UserController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -45,7 +44,7 @@ public class DeleteBookFormController {
                 if (book != null){
                     txtTitle.setText(book.getTitle());
                     txtAuthor.setText(book.getAuthor());
-                    txtISBN.setText(book.getISBN());
+                    txtISBN.setText(book.getIsbn());
                     txtGenre.setText(book.getGenre());
                     txtAvailability.setText(book.getAvailability());
                     btnDelete.setDisable(false);

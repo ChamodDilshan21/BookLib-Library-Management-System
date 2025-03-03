@@ -12,18 +12,18 @@ import lombok.ToString;
 
 public class Book {
 
-    public Book(String title, String author, String ISBN, String genre, String availability) {
+    public Book(String title, String author, String isbn, String genre, String availability) {
         this.title = title;
         this.author = author;
-        this.ISBN = ISBN;
+        this.isbn = isbn;
         this.genre = genre;
         this.availability = availability;
     }
 
-    int bookId;
+    Integer bookId;
     String title;
     String author;
-    String ISBN;
+    String isbn;
     String genre;
     String availability;
 }

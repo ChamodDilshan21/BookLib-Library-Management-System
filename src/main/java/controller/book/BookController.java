@@ -2,6 +2,7 @@ package controller.book;
 
 import db.DBConnection;
 import model.Book;
+import model.BorrowDetail;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,7 +19,7 @@ public class BookController implements BookServices {
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO book (title,author,ISBN,genre,availability) VALUES (?,?,?,?,?);");
         preparedStatement.setObject(1, book.getTitle());
         preparedStatement.setObject(2, book.getAuthor());
-        preparedStatement.setObject(3, book.getISBN());
+        preparedStatement.setObject(3, book.getIsbn());
         preparedStatement.setObject(4, book.getGenre());
         preparedStatement.setObject(5, book.getAvailability());
         return preparedStatement.executeUpdate() > 0;
@@ -30,7 +31,7 @@ public class BookController implements BookServices {
         PreparedStatement preparedStatement = connection.prepareStatement("UPDATE book SET title=?,author=?,ISBN=?,genre=?,availability=? WHERE bookId=?;");
         preparedStatement.setObject(1, book.getTitle());
         preparedStatement.setObject(2, book.getAuthor());
-        preparedStatement.setObject(3, book.getISBN());
+        preparedStatement.setObject(3, book.getIsbn());
         preparedStatement.setObject(4, book.getGenre());
         preparedStatement.setObject(5, book.getAvailability());
         preparedStatement.setObject(6, BookId);
@@ -145,7 +146,36 @@ public class BookController implements BookServices {
     }
 
     @Override
+    public List<Book> getAvailableBooks() throws SQLException {
+        List<Book> bookList = new ArrayList<>();
+        Connection connection = DBConnection.getInstance().getConnection();
+        ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM book WHERE availability=1;");
+        while (resultSet.next()) {
+            bookList.add(new Book(
+                    resultSet.getInt(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
+            ));
+        }
+        return bookList;
+    }
+
+    @Override
     public boolean deleteBook(String bookId) throws SQLException {
         return DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM book WHERE bookId='"+bookId+"'")>0;
+    }
+
+    public boolean updateBookAvailability(List<BorrowDetail> borrowDetailList) throws SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        for (BorrowDetail borrowDetail:borrowDetailList){
+            boolean isBookStatusUpdated = connection.createStatement().executeUpdate("UPDATE book SET availability=2 WHERE bookId='" + borrowDetail.getBookCode() + "'") > 0;
+            if (!isBookStatusUpdated){
+                return false;
+            }
+        }
+        return true;
     }
 }

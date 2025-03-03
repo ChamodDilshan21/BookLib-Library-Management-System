@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class User {
 
-    public User(String name, String contact, Date membershipDate, Double balance) {
+    public User(String name, String contact, String membershipDate, Double balance) {
         this.name = name;
         this.contact = contact;
         this.membershipDate = membershipDate;
@@ -24,6 +24,6 @@ public class User {
     String userId;
     String name;
     String contact;
-    Date membershipDate;
+    String membershipDate;
     Double balance;
 }

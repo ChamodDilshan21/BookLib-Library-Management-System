@@ -1,9 +1,12 @@
-package Additional;
+package util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class InputValidator {
+
+    private InputValidator(){}
+
     public static boolean isValidContact(String contact) {
         Pattern pattern = Pattern.compile("^07\\d{8}$");
         Matcher match = pattern.matcher(contact);

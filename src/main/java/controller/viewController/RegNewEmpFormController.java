@@ -1,6 +1,6 @@
 package controller.viewController;
 
-import Additional.InputValidator;
+import util.InputValidator;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -11,7 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import model.Employee;
-import Additional.Notification;
+import util.Notification;
 import org.jasypt.util.text.BasicTextEncryptor;
 
 import java.net.URL;

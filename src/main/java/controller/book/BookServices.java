@@ -22,5 +22,7 @@ public interface BookServices {
 
     List<Book> getAllBooks() throws SQLException;
 
+    List<Book> getAvailableBooks() throws SQLException;
+
     boolean deleteBook(String bookId) throws SQLException;
 }
